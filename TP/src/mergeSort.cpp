@@ -1,14 +1,13 @@
 #include "../include/mergeSort.h"
 
-
 using namespace mergeSort;
 
 void mergeSort::merge(std::string nomes[], int esq, int meio, int dir) {
   int tamanhoEsq = meio - esq + 1;
   int tamanhoDir = dir - meio; // dir - (meio + 1) + 1
 
-  int* nomesEsq = new int[tamanhoEsq];
-  int* nomesDir = new int[tamanhoDir];
+  std::string* nomesEsq = new std::string[tamanhoEsq];
+  std::string* nomesDir = new std::string[tamanhoDir];
 
   for(int i = 0; i < tamanhoEsq; i++) {
     nomesEsq[i] = nomes[esq + i];
@@ -53,5 +52,5 @@ void mergeSort::mergeSort(std::string nomes[], int comeco, int fim) {
   int meio = comeco + (fim - comeco) / 2;
   mergeSort(nomes, comeco, meio);
   mergeSort(nomes, meio + 1, fim);
-  merge(nomes, comeco, fim);
+  merge(nomes, comeco, meio, fim);
 }

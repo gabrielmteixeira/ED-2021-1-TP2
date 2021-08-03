@@ -1,3 +1,5 @@
+#ifndef QUICKSORT 
+#define QUICKSORT
 #include <string>
 
 namespace quickSort {
@@ -5,3 +7,5 @@ namespace quickSort {
   void particao(int esq, int dir, int *i, int *j, std::string *nomes);
   void ordena(int esq, int dir, std::string *nomes);
 }
+
+#endif

@@ -1,5 +1,6 @@
 {
   "files.associations": {
+    "iostream": "cpp",
     "array": "cpp",
     "atomic": "cpp",
     "*.tcc": "cpp",
@@ -39,7 +40,6 @@
     "sstream": "cpp",
     "stdexcept": "cpp",
     "streambuf": "cpp",
-    "typeinfo": "cpp",
-    "iostream": "cpp"
+    "typeinfo": "cpp"
   }
 }

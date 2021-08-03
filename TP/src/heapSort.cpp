@@ -2,44 +2,44 @@
 
 using namespace heapSort;
 
-void heapSort::refaz(int esq, int dir, std::string *nome) {
+void heapSort::refaz(int esq, int dir, std::string *dados) {
   int i, j;
   std::string raiz;
   i = esq;
-  j = i * 2;
-  raiz = A[i];
+  j = i * 2 + 1;
+  raiz = dados[i];
   while(j <= dir) {
     if(j < dir) {
-      if(nome[j] < nome[j + 1]) j++;
+      if(dados[j] < dados[j + 1]) j++;
     }
-    if(raiz >= nome[j]) break;
-    nome[i] = nome[j];
+    if(raiz >= dados[j]) break;
+    dados[i] = dados[j];
     i = j;
-    j = i * 2;
+    j = i * 2 + 1;
   }
-  nome[i] = x;
+  dados[i] = raiz;
 }
 
-void heapSort::constroi(std::string *nomes, int n) {
+void heapSort::constroi(std::string *dados, int n) {
   int esq;
-  esq = n/2 + 1;
+  esq = n/2;
   while(esq > 0) {
     esq--;
-    refaz(esq, n, nomes);
+    refaz(esq, n - 1, dados);
   }
 }
 
-void heapSort::heapSort(std::string *nomes, int *n) {
+void heapSort::heapSort(std::string *dados, int n) {
   int esq, dir;
   std::string raiz;
-  constroi(nomes, n);
+  constroi(dados, n);
   esq = 0;
-  dir = *n;
+  dir = n - 1;
   while(dir > 0) {
-    raiz = nomes[0];
-    nomes[0] = nomes[dir];
-    nomes[dir] = raiz;
+    raiz = dados[0];
+    dados[0] = dados[dir];
+    dados[dir] = raiz;
     dir--;
-    refaz(esq, dir, nomes);
+    refaz(esq, dir, dados);
   }
 }

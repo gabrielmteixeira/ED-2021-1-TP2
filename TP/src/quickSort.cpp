@@ -31,5 +31,5 @@ void quickSort::ordena(int esq, int dir, std::string *nomes) {
 }
 
 void quickSort::quickSort(std::string *nomes, int n) {
-  ordena(0, n-1, nomes);
+  ordena(0, n - 1, nomes);
 }
