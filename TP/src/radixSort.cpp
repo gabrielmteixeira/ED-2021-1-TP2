@@ -1,5 +1,4 @@
 #include "../include/radixSort.h"
-#include <iostream>
 
 using namespace radixSort;
 
