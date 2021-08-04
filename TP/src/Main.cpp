@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <chrono>
 #include "../include/heapSort.h"
 #include "../include/quickSort.h"
 #include "../include/mergeSort.h"
@@ -37,29 +38,28 @@ int main(int argc, char* argv[]) {
     switch(config) {
       case 1:
         // roda o quicksort para nomes e heapsort para dados
-        quickSort::quickSort(nomes, dados, numeroDeLinhas);
         heapSort::heapSort(nomes, dados, numeroDeLinhas);
-
+        quickSort::quickSort(nomes, dados, numeroDeLinhas);
         break;
 
       case 2:
         // roda o quicskort para nomes e radix exchange sort para dados
-        quickSort::quickSort(nomes, dados, numeroDeLinhas);
         radixSort::radixSort(nomes, dados, 0, numeroDeLinhas - 1);
-
+        quickSort::quickSort(nomes, dados, numeroDeLinhas);
         break;
 
       case 3:
         // roda o mergesort para nomes e heapsort para dados
-        mergeSort::mergeSort(nomes, dados, 0, numeroDeLinhas - 1);
         heapSort::heapSort(nomes, dados, numeroDeLinhas);
+        mergeSort::mergeSort(nomes, dados, 0, numeroDeLinhas - 1);
         break;
         
       case 4:
         // roda o mergesort para nomes e radix exchange sort para dados
-        mergeSort::mergeSort(nomes, dados, 0, numeroDeLinhas - 1);
         radixSort::radixSort(nomes, dados, 0, numeroDeLinhas - 1);
+        mergeSort::mergeSort(nomes, dados, 0, numeroDeLinhas - 1);
         break;
+        
       default:
         throw("A configuração selecionada não é válida");
     }
