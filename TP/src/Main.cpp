@@ -31,30 +31,34 @@ int main(int argc, char* argv[]) {
     }
 
     for(int i = 0; i < numeroDeLinhas; i++) {
-      std::cout << dados[i] << std::endl;
+      std::cout << nomes[i] << " " << dados[i] << std::endl;
     }
+
     switch(config) {
       case 1:
         // roda o quicksort para nomes e heapsort para dados
-        quickSort::quickSort(nomes, numeroDeLinhas);
+        quickSort::quickSort(nomes, dados, numeroDeLinhas);
+        heapSort::heapSort(nomes, dados, numeroDeLinhas);
 
         break;
 
       case 2:
         // roda o quicskort para nomes e radix exchange sort para dados
-        heapSort::heapSort(nomes, numeroDeLinhas);
+        heapSort::heapSort(nomes, dados, numeroDeLinhas);
+        radixSort::radixSort(nomes, dados, 0, numeroDeLinhas - 1);
 
         break;
 
       case 3:
         // roda o mergesort para nomes e heapsort para dados
-        mergeSort::mergeSort(dados, 0, numeroDeLinhas - 1);
+        mergeSort::mergeSort(nomes, dados, 0, numeroDeLinhas - 1);
 
         break;
         
       case 4:
         // roda o mergesort para nomes e radix exchange sort para dados
-        radixSort::radixSort(dados, 0, numeroDeLinhas - 1);
+        mergeSort::mergeSort(nomes, dados, 0, numeroDeLinhas - 1);
+        radixSort::radixSort(nomes, dados, 0, numeroDeLinhas - 1);
         break;
       default:
         throw("A configuração selecionada não é válida");
@@ -62,7 +66,7 @@ int main(int argc, char* argv[]) {
 
     std::cout << std::endl;
     for(int i = 0; i < numeroDeLinhas; i++) {
-      std::cout << dados[i] << std::endl;
+      std::cout << nomes[i] << " " << dados[i] << std::endl;
     }
   } catch(const char* error) {
     std::cerr << error << std::endl;

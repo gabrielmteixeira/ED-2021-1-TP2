@@ -3,8 +3,8 @@
 #include <string>
 
 namespace mergeSort {
-  void mergeSort(std::string nomes[], int comeco, int fim);
-  void merge(std::string nomes[], int esq, int meio, int dir);
+  void mergeSort(std::string nomes[], std::string dados[], int comeco, int fim);
+  void merge(std::string nomes[], std::string dados[], int esq, int meio, int dir);
 }
 
 #endif

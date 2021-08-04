@@ -3,9 +3,9 @@
 #include <string>
 
 namespace heapSort {
-  void heapSort(std::string *dados, int n);
-  void constroi(std::string *dados, int n);
-  void refaz(int esq, int dir, std::string *dados);
+  void heapSort(std::string* nomes, std::string* dados, int n);
+  void constroi(std::string* nomes, std::string* dados, int n);
+  void refaz(int esq, int dir, std::string* nomes, std::string* dados);
 }
 
 #endif

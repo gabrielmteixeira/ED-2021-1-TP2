@@ -2,7 +2,9 @@
 
 using namespace mergeSort;
 
-void mergeSort::merge(std::string nomes[], int esq, int meio, int dir) {
+void mergeSort::merge(std::string nomes[], std::string dados[], int esq,
+  int meio, int dir) {
+
   int tamanhoEsq = meio - esq + 1;
   int tamanhoDir = dir - meio; // dir - (meio + 1) + 1
 
@@ -46,11 +48,13 @@ void mergeSort::merge(std::string nomes[], int esq, int meio, int dir) {
   }
 }
 
-void mergeSort::mergeSort(std::string nomes[], int comeco, int fim) {
+void mergeSort::mergeSort(std::string nomes[], std::string dados[],
+  int comeco, int fim) {
+
   if(comeco >= fim) return;
 
   int meio = comeco + (fim - comeco) / 2;
-  mergeSort(nomes, comeco, meio);
-  mergeSort(nomes, meio + 1, fim);
-  merge(nomes, comeco, meio, fim);
+  mergeSort(nomes, dados, comeco, meio);
+  mergeSort(nomes, dados, meio + 1, fim);
+  merge(nomes, dados, comeco, meio, fim);
 }
