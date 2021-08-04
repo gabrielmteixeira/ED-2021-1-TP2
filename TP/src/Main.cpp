@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
 
       case 2:
         // roda o quicskort para nomes e radix exchange sort para dados
-        heapSort::heapSort(nomes, dados, numeroDeLinhas);
+        quickSort::quickSort(nomes, dados, numeroDeLinhas);
         radixSort::radixSort(nomes, dados, 0, numeroDeLinhas - 1);
 
         break;
@@ -52,7 +52,7 @@ int main(int argc, char* argv[]) {
       case 3:
         // roda o mergesort para nomes e heapsort para dados
         mergeSort::mergeSort(nomes, dados, 0, numeroDeLinhas - 1);
-
+        heapSort::heapSort(nomes, dados, numeroDeLinhas);
         break;
         
       case 4:
