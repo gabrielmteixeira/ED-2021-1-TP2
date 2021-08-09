@@ -64,6 +64,7 @@ void mergeSort::merge(std::string nomes[], std::string dados[], int esq,
   }
 }
 
+// Representa o método de ordenação "Quick Sort". 
 // Executa duas chamadas recursivas, passando os índices equivalentes à
 // primeira metade dos arrays para uma e à segunda para a outra. Essas chamadas
 // recursivas permitem  a separação das partes dos arrays até itens unitários.
