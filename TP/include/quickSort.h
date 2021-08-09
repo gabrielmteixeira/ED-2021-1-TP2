@@ -2,6 +2,8 @@
 #define QUICKSORT
 #include <string>
 
+// Namespace que contém as funções que constituem o método de ordenação Quick
+// Sort.
 namespace quickSort {
   void quickSort(std::string* nomes, std::string* dados, int n);
   void particao(int esq, int dir, int* i, int* j, std::string* nomes,
