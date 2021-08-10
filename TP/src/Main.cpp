@@ -7,6 +7,10 @@
 #include "../include/mergeSort.h"
 #include "../include/radixSort.h"
 
+// Utiliza os métodos de ordenação da configuração selecionada (1, 2, 3 e 4)
+// para ordenar de forma crescente as linhas selecionadas da entrada
+// "homologacao.txt",primeiramente levando em conta os dados binários e, em
+// seguida, os nomes. O resultado da ordenação é então impresso.
 int main(int argc, char* argv[]) {
   std::ifstream entrada(argv[1]);
   std::string texto;
@@ -31,6 +35,7 @@ int main(int argc, char* argv[]) {
       dados[i] = dado;
     }
 
+    // Remover este for para a versão final
     for(int i = 0; i < numeroDeLinhas; i++) {
       std::cout << nomes[i] << " " << dados[i] << std::endl;
     }
