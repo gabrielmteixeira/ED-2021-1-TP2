@@ -54,6 +54,11 @@ void mergeSort::merge(std::string nomes[], std::string dados[], int esq,
     indiceNomesDir++;
     indiceNomes++;
   }
+
+  delete[] nomesEsq;
+  delete[] dadosEsq;
+  delete[] nomesDir;
+  delete[] dadosDir;
 }
 
 void mergeSort::mergeSort(std::string nomes[], std::string dados[],

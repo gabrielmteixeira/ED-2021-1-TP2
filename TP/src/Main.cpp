@@ -12,15 +12,15 @@
 // "homologacao.txt",primeiramente levando em conta os dados binários e, em
 // seguida, os nomes. O resultado da ordenação é então impresso.
 int main(int argc, char* argv[]) {
-  std::ifstream entrada(argv[1]);
-  std::string texto;
-  int config = std::stoi(argv[2]);
-  int numeroDeLinhas = std::stoi(argv[3]);
-
-  std::string* nomes = new std::string[numeroDeLinhas];
-  std::string* dados = new std::string[numeroDeLinhas];
-
   try {
+    std::ifstream entrada(argv[1]);
+    std::string texto;
+    int config = std::stoi(argv[2]);
+    int numeroDeLinhas = std::stoi(argv[3]);
+
+    std::string* nomes = new std::string[numeroDeLinhas];
+    std::string* dados = new std::string[numeroDeLinhas];
+
     for(int i = 0; i < numeroDeLinhas; i++) {
       getline(entrada, texto);
 
@@ -36,9 +36,6 @@ int main(int argc, char* argv[]) {
     }
 
     // Remover este for para a versão final
-    for(int i = 0; i < numeroDeLinhas; i++) {
-      std::cout << nomes[i] << " " << dados[i] << std::endl;
-    }
 
     switch(config) {
       case 1:
@@ -69,10 +66,13 @@ int main(int argc, char* argv[]) {
         throw("A configuração selecionada não é válida");
     }
 
-    std::cout << std::endl;
     for(int i = 0; i < numeroDeLinhas; i++) {
       std::cout << nomes[i] << " " << dados[i] << std::endl;
     }
+
+    delete[] nomes;
+    delete[] dados;
+  
   } catch(const char* error) {
     std::cerr << error << std::endl;
   }
