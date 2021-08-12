@@ -35,8 +35,6 @@ int main(int argc, char* argv[]) {
       dados[i] = dado;
     }
 
-    // Remover este for para a versão final
-
     switch(config) {
       case 1:
         // roda o quicksort para nomes e heapsort para dados
